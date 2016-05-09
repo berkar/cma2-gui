@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+._button {
+  display: block;
+  float: left;
+  height: 39px;
+  margin-top: 27px;
+  border-radius: 3px;
+  background-color: rgb(222, 222, 222);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+._button-1 {
+  width: 9.4166666666%;
+  margin-left: 10%;
+}
+
+._button-2 {
+  width: 6.8333333333%;
+  margin-left: 14.75%;
+}
+
+._button-3 {
+  width: 6.8333333333%;
+  margin-left: 1.16667%;
+}
+
+._button-4 {
+  width: 6.8333333333%;
+  margin-left: 1.08073%;
+}
+
+._button-5 {
+  width: 6.8333333333%;
+  margin-left: 1.16146%;
+}
+
+._button-6 {
+  width: 9.1666666666%;
+  margin-left: 6.28125%;
+}
+
+._button-7 {
+  width: 9.1666666666%;
+  margin-left: 0.45573%;
+}
