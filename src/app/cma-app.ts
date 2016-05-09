@@ -10,6 +10,7 @@ import {RepoBrowser} from "./components/repo-browser/repo-browser";
   pipes: [],
   directives: [ROUTER_DIRECTIVES],
   templateUrl: 'app/cma-app.html',
+  styleUrls: ['app/cma-app.css']
 })
 @RouteConfig([
   {path: '/home', component: Home, name: 'Home', useAsDefault: true},
