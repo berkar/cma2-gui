@@ -1,18 +1,17 @@
 import {Component} from "@angular/core";
-import {Http} from "@angular/http";
-
+import {CmaService} from "../../services/cma-service";
 
 @Component({
   selector: 'info',
   templateUrl: 'app/components/startlist/startlist.html',
   styleUrls: ['app/components/startlist/startlist.css'],
-  providers: [],
+  providers: [CmaService],
   directives: [],
   pipes: []
 })
 export class Startlist {
 
-  constructor(http:Http) {
+  constructor(private cmaService:CmaService) {
 
   }
 

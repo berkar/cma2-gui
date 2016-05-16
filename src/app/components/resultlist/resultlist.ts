@@ -1,18 +1,17 @@
 import {Component} from "@angular/core";
-import {Http} from "@angular/http";
-
+import {CmaService} from "../../services/cma-service";
 
 @Component({
   selector: 'info',
   templateUrl: 'app/components/resultlist/resultlist.html',
   styleUrls: ['app/components/resultlist/resultlist.css'],
-  providers: [],
+  providers: [CmaService],
   directives: [],
   pipes: []
 })
 export class Resultlist {
 
-  constructor(http:Http) {
+  constructor(private cmaService:CmaService) {
 
   }
 
