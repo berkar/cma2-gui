@@ -1,5 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {CmaService} from "../../services/cma-service";
+import {Resultat} from "../../model";
 
 @Component({
   selector: 'info',
@@ -9,13 +10,15 @@ import {CmaService} from "../../services/cma-service";
   directives: [],
   pipes: []
 })
-export class Resultlist {
+export class Resultlist implements OnInit {
+
+  resultlist:Resultat[];
 
   constructor(private cmaService:CmaService) {
 
   }
 
   ngOnInit() {
-
+    CmaService.getResultlist().then(resultlist => this.resultlist = resultlist);
   }
 }

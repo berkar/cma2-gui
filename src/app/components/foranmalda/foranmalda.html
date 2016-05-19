@@ -1,4 +1,11 @@
 <h4>Föranmälda</h4>
 <input placeholder="Ange förnamn efternamn" type="search">
 <button>Registrera</button>
+
+<ul class="foranmalda">
+  <li *ngFor="let anm of foranmalda">
+    {{anm.did}} :: {{anm.name}}
+  </li>
+</ul>
+
 <p></p>

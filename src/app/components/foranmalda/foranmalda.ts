@@ -1,5 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {CmaService} from "../../services/cma-service";
+import {Anmalan} from "../../model";
 
 
 @Component({
@@ -10,13 +11,14 @@ import {CmaService} from "../../services/cma-service";
   directives: [],
   pipes: []
 })
-export class Foranmalda {
+export class Foranmalda implements OnInit {
+
+  foranmalda:Anmalan[];
 
   constructor(private cmaService:CmaService) {
-
   }
 
   ngOnInit() {
-
+    CmaService.getForanmalda(null).then(foranmalda => this.foranmalda = foranmalda);
   }
 }

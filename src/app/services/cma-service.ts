@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, URLSearchParams} from "@angular/http";
 import "rxjs/add/operator/map";
+import {FORANMALDA, STARTLIST, RESULTLIST, EGENSKAPER} from "./mocks";
 
 @Injectable()
 export class CmaService {
@@ -8,12 +9,26 @@ export class CmaService {
   constructor(private http:Http) {
   }
 
-  getForanmalda(name:string) {
+  static getForanmalda(name:string) {
+    return Promise.resolve(FORANMALDA);
   }
 
-  getStartlist() {
+  static getStartlist() {
+    return Promise.resolve(STARTLIST);
   }
 
-  getResultlist() {
+  static getResultlist() {
+    return Promise.resolve(RESULTLIST);
+  }
+
+  getEgenskaper() {
+    let params = new URLSearchParams();
+    params.set('per_page', '100');
+
+    let url = `http://localhost:8080/cma/rest/egenskaper`;
+    // console.log(this.http.get(url, {search: params}));
+    // console.log(this.http.get(url, {search: params}).map((res) => res.json()));
+    // return this.http.get(url, {search: params}).map((res) => res.json());
+    return EGENSKAPER;
   }
 }
