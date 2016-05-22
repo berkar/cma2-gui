@@ -1,24 +1,19 @@
-<h3>
+<h1>
   Competition Management Application
-</h3>
+</h1>
 <nav>
-  <a [routerLink]=" ['/Home'] ">
-    Home
-  </a>
-  |
-  <a [routerLink]=" ['/About'] ">
-    About
-  </a>
-  |
-  <a [routerLink]=" ['/RepoBrowser/RepoList', {org: 'angular'}] ">
-    Github Repos
-  </a>
+  <a [routerLink]=" ['/Home'] ">Hem</a>
+  <a [routerLink]=" ['/Info'] ">Information</a>
+  <a [routerLink]=" ['/Foranmalda'] ">Föranmälda</a>
+  <a [routerLink]=" ['/Startlist'] ">Startlista</a>
+  <a [routerLink]=" ['/Resultlist'] ">Resultatlista</a>
+  <a [routerLink]=" ['/About'] ">About</a>
+  <a [routerLink]=" ['/RepoBrowser/RepoList', {org: 'angular'}] ">Github Repos</a>
 </nav>
 
 <main>
   <router-outlet></router-outlet>
 </main>
-
 
 <footer>
   © 2016
