@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {CmaService} from "../../services/cma-service";
-import {Anmalan} from "../../model";
+import {Foranmald} from "../../model";
 
 
 @Component({
@@ -13,12 +13,16 @@ import {Anmalan} from "../../model";
 })
 export class Foranmalda implements OnInit {
 
-  foranmalda:Anmalan[];
+  foranmalda:Foranmald[];
 
   constructor(private cmaService:CmaService) {
   }
 
   ngOnInit() {
-    CmaService.getForanmalda(null).then(foranmalda => this.foranmalda = foranmalda);
+    this.cmaService.getForanmalda(null).subscribe(
+      foranmalda => this.foranmalda = foranmalda,
+      error => console.error('Error: ' + error),
+      () => console.log('Föranmälda Completed!')
+    );
   }
 }

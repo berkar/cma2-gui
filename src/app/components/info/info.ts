@@ -20,6 +20,10 @@ export class Info implements OnInit {
   }
 
   ngOnInit() {
-    this.egenskaper = this.cmaService.getEgenskaper();
+    this.cmaService.getEgenskaper().subscribe(
+      egenskaper => this.egenskaper = egenskaper,
+      error => console.error('Error: ' + error),
+      () => console.log('Egenskaper Completed!')
+    );
   }
 }

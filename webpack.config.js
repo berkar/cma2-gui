@@ -6,42 +6,27 @@ var path = require('path');
 var webpackConfig = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor':    './src/vendor.ts',
-    'app':       './src/app.ts',
+    'vendor': './src/vendor.ts',
+    'app': './src/app.ts'
   },
 
   output: {
-    path: './dist',
+    path: './dist'
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({name: ['app', 'vendor', 'polyfills'], minChunks: Infinity}),
   ],
 
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      {test: /\.ts$/, loader: 'awesome-typescript-loader'},
 
     ]
   }
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Our Webpack Defaults
@@ -64,7 +49,7 @@ var defaultConfig = {
           // these packages have problems with their sourcemaps
           path.join(__dirname, 'node_modules', 'rxjs'),
           path.join(__dirname, 'node_modules', '@angular2-material'),
-          path.join(__dirname, 'node_modules', '@angular'),
+          path.join(__dirname, 'node_modules', '@angular')
         ]
       }
     ],
@@ -75,7 +60,7 @@ var defaultConfig = {
   },
 
   resolve: {
-    root: [ path.join(__dirname, 'src') ],
+    root: [path.join(__dirname, 'src')],
     extensions: ['', '.ts', '.js'],
     alias: {
       'angular2/testing': path.join(__dirname, 'node_modules', '@angular', 'core', 'testing.js'),
@@ -91,7 +76,7 @@ var defaultConfig = {
 
   devServer: {
     historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
+    watchOptions: {aggregateTimeout: 300, poll: 1000}
   },
 
   node: {

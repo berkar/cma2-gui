@@ -15,10 +15,13 @@ export class Startlist implements OnInit {
   startlist:Start[];
 
   constructor(private cmaService:CmaService) {
-
   }
 
   ngOnInit() {
-    CmaService.getStartlist().then(startlist => this.startlist = startlist);
+    this.cmaService.getStartlist().subscribe(
+      startlist => this.startlist = startlist,
+      error => console.error('Error: ' + error),
+      () => console.log('Startlista Completed!')
+    );
   }
 }

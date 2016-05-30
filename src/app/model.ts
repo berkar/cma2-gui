@@ -13,8 +13,9 @@ export class Item {
   clazz:string;
 }
 
-export class Anmalan extends Item {
-
+export class Foranmald {
+  did:number;
+  name:string;
 }
 
 export class Start extends Item {

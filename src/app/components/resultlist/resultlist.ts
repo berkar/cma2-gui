@@ -15,10 +15,14 @@ export class Resultlist implements OnInit {
   resultlist:Resultat[];
 
   constructor(private cmaService:CmaService) {
-
   }
 
   ngOnInit() {
-    CmaService.getResultlist().then(resultlist => this.resultlist = resultlist);
+    this.cmaService.getResultlist(null, null).subscribe(
+      resultlist => this.resultlist = resultlist,
+      error => console.error('Error: ' + error),
+      () => console.log('Resultlista Completed!')
+    );
+
   }
 }

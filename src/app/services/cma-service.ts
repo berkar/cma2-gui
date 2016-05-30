@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
-import {Http, URLSearchParams} from "@angular/http";
+import {Http} from "@angular/http";
 import "rxjs/add/operator/map";
-import {FORANMALDA, STARTLIST, RESULTLIST, EGENSKAPER} from "./mocks";
 
 @Injectable()
 export class CmaService {
@@ -9,26 +8,19 @@ export class CmaService {
   constructor(private http:Http) {
   }
 
-  static getForanmalda(name:string) {
-    return Promise.resolve(FORANMALDA);
+  getForanmalda(name:string) {
+    return this.http.get(`http://localhost:8080/cma/rest/foranmald`).map((res) => res.json());
   }
 
-  static getStartlist() {
-    return Promise.resolve(STARTLIST);
+  getStartlist() {
+    return this.http.get(`http://localhost:8080/cma/rest/start`).map((res) => res.json());
   }
 
-  static getResultlist() {
-    return Promise.resolve(RESULTLIST);
+  getResultlist(gender:string, clazz:string) {
+    return this.http.get(`http://localhost:8080/cma/rest/resultatlista`).map((res) => res.json());
   }
 
   getEgenskaper() {
-    let params = new URLSearchParams();
-    params.set('per_page', '100');
-
-    let url = `http://localhost:8080/cma/rest/egenskaper`;
-    // console.log(this.http.get(url, {search: params}));
-    // console.log(this.http.get(url, {search: params}).map((res) => res.json()));
-    // return this.http.get(url, {search: params}).map((res) => res.json());
-    return EGENSKAPER;
+    return this.http.get(`http://localhost:8080/cma/rest/egenskaper`).map((res) => res.json());
   }
 }
